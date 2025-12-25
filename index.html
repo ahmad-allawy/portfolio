@@ -524,9 +524,9 @@
       .then(response => response.text())
       .then(data => document.getElementById('certificates').innerHTML = data);
 
-    // fetch('sections/projects.html')
-    //   .then(response => response.text())
-    //   .then(data => document.getElementById('projects').innerHTML = data);
+    fetch('sections/projects.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('projects').innerHTML = data);
 
 
 
