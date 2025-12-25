@@ -1,3 +1,59 @@
+<style>
+    .filter-btn {
+  padding: 10px 22px;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1.5px solid rgba(99, 102, 241, 0.4);
+  border-radius: 50px;
+  color: #c7d2fe;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-btn:hover {
+  background: oklch(65.613% 0.24084 353.961 / 0.692);
+  color: #ffffff;
+  border-color: oklch(65.613% 0.24084 353.961 / 0.692);
+  box-shadow: 0 0 12px  oklch(65.613% 0.24084 353.961 / 0.692);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active,
+.filter-btn:active {
+  background: rgba(99, 102, 241, 0.4);
+  color: #ffffff;
+  border-color: rgba(99, 102, 241, 0.9);
+  box-shadow: 0 0 18px rgba(99, 102, 241, 0.8);
+  transform: scale(0.97);
+}
+
+.filter-btn.active {
+  color: #ffffff;
+  font-weight: 600;
+  background:  oklch(65.613% 0.24084 353.961 / 0.692);
+  border: 2px solid  oklch(65.613% 0.24084 353.961 / 0.692);
+  box-shadow: 0 0 20px  oklch(65.613% 0.24084 353.961 / 0.692);
+}
+.filter-btn[data-filter="Mobile Dev"]::before {
+  content: "📱";
+}
+.filter-btn[data-filter="gamedev"]::before {
+  content: "🎮";
+}
+.filter-btn[data-filter="backend"]::before {
+  content: "⚙";
+}
+.filter-btn[data-filter="IoT"]::before {
+  content: "🔌";
+}
+
+
+</style>
+
 <div class="text-center mb-12 animate-slide-in-up">
     <h2 class="text-4xl font-extrabold mb-4">
         Featured
@@ -8,359 +64,501 @@
     </p>
 </div>
 <div class="flex justify-center gap-4 mb-10">
-    <button class="filter-btn px-5 py-2 bg-indigo-500/20 border border-indigo-500/40 rounded-full hover:bg-indigo-500/30 "
+    <button
+        class="filter-btn px-5 py-2 bg-indigo-500/20 border border-indigo-500/40 rounded-full hover:bg-indigo-500/30 active"
         data-filter="all">
         All
     </button>
 
-    <button class="filter-btn px-5 py-2 bg-indigo-500/20 border border-indigo-500/40 rounded-full hover:bg-indigo-500/30 active"
+    <button
+        class="filter-btn px-5 py-2 bg-indigo-500/20 border border-indigo-500/40 rounded-full hover:bg-indigo-500/30"
         data-filter="backend">
         Backend
     </button>
 
-    <button class="filter-btn px-5 py-2 bg-indigo-500/20 border border-indigo-500/40 rounded-full hover:bg-indigo-500/30"
-        data-filter="iot">
-        IoT
+    <button
+        class="filter-btn px-5 py-2 bg-indigo-500/20 border border-indigo-500/40 rounded-full hover:bg-indigo-500/30"
+        data-filter="IoT">
+        IoT & Embedded
+    </button>
+    <button
+        class="filter-btn px-5 py-2 bg-indigo-500/20 border border-indigo-500/40 rounded-full hover:bg-indigo-500/30"
+        data-filter="Mobile Dev">
+        Mobile Dev
     </button>
 
-    <button class="filter-btn px-5 py-2 bg-indigo-500/20 border border-indigo-500/40 rounded-full hover:bg-indigo-500/30"
+    <button
+        class="filter-btn px-5 py-2 bg-indigo-500/20 border border-indigo-500/40 rounded-full hover:bg-indigo-500/30"
         data-filter="gamedev">
         Game Dev
     </button>
 </div>
 
+<br>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div
+
+    <!-- IoT & embedded projects -->
+    <div data-category="IoT"
         class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
-        <h3 class="text-xl font-semibold mb-4">Twitter API Clone</h3>
+        <h3 class="text-xl font-semibold mb-4">Master of Things Platform [MOT]</h3>
+
         <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Django</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">DRF</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Redis</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">IoT</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Smart Parking</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Light Intensity</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Mobile Signal Tracking</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Custom Events</span>
         </div>
-        <p class="text-base opacity-90 mb-4 flex-grow">
-            A comprehensive backend implementation of a Twitter clone with
-            features like authentication, tweet management, likes, retweets,
-            notifications, and real-time chat.
+
+        <p class="text-base opacity-90 mb-4">
+            My IoT projects using the MOT platform, such as smart parking, light intensity, mobile signal tracking,
+            smart gates, and I have also developed custom events and plugins.
         </p>
+
         <details class="mb-4">
-            <summary class="text-emerald-400 font-medium cursor-pointer">
-                Key Features
-            </summary>
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
             <ul class="list-disc pl-5 mt-2 text-sm">
-                <li>
-                    Authentication: Signup, email activation, login, password
-                    management with JWT
-                </li>
-                <li>Social Auth: Login with Google</li>
-                <li>
-                    Tweet Management: CRUD operations, likes, bookmarks,
-                    retweets
-                </li>
-                <li>User Management: Profiles, following/followers</li>
-                <li>Real-time Notifications & Chat using WebSockets</li>
+                <li>Smart parking management</li>
+                <li>Light intensity monitoring</li>
+                <li>Mobile signal tracking</li>
+                <li>Custom events and plugins development</li>
             </ul>
         </details>
+
+
         <div class="flex gap-4">
-            <a href="https://github.com/OmarMuhammmed/E-Learing-Platform" target="_blank"
-                class="text-white hover:text-indigo-400 transition-all duration-300 flex items-center"><i
-                    class="fab fa-github mr-2"></i>View Code</a>
+            <a href="https://github.com/Ahmed-Allawy/IOT_Projects/tree/main/Master%20of%20Things%20Platform%20(MOT)"
+                target="_blank" class="text-white hover:text-indigo-400 transition-all duration-300">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
         </div>
     </div>
-    <div
-        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card"  data-category="backend">
-        <h3 class="text-xl font-semibold mb-4">E-Learning Platform</h3>
-        <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Django</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">DRF</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">WebSockets</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Docker</span>
-        </div>
-        <p class="text-base opacity-90 mb-4 flex-grow">
-            A full-featured online course management system that allows
-            instructors to create courses, manage content, and enroll
-            students with real-time interactions.
-        </p>
-        <details class="mb-4">
-            <summary class="text-emerald-400 font-medium cursor-pointer">
-                Key Features
-            </summary>
-            <ul class="list-disc pl-5 mt-2 text-sm">
-                <li>Course Management: Structured chapters and lessons</li>
-                <li>User Authentication: Role-based access control</li>
-                <li>Content Management: Support for various content types</li>
-                <li>
-                    Interactive Learning: Drag-and-drop content reordering
-                </li>
-                <li>Real-Time Chat: Using Django Channels and Redis</li>
-                <li>Production-Ready: Dockerized deployment</li>
-            </ul>
-        </details>
-        <div class="flex gap-4">
-            <a href="https://github.com/OmarMuhammmed/E-Learing-Platform" target="_blank"
-                class="text-white hover:text-indigo-400 transition-all duration-300 flex items-center"><i
-                    class="fab fa-github mr-2"></i>View Code</a>
-        </div>
-    </div>
-    <div
+
+    <div data-category="IoT"
         class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
-        <h3 class="text-xl font-semibold mb-4">E-Commerce API</h3>
+        <h3 class="text-xl font-semibold mb-4">Smart Oilfield [IoT & Blockchain]</h3>
+
         <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Django</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">DRF</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Docker</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Redis</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Celery</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">IoT</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Blockchain</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Monitoring</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Control System</span>
         </div>
-        <p class="text-base opacity-90 mb-4 flex-grow">
-            A robust, scalable, and high-performance RESTful API for
-            e-commerce platforms built with Django and Django Rest
-            Framework.
+        <p class="text-base opacity-90 mb-4">
+            Developing a robust and secure system for monitoring and controlling oilfield operations using IoT (Internet
+            of Things) and blockchain technology.
         </p>
+
         <details class="mb-4">
-            <summary class="text-emerald-400 font-medium cursor-pointer">
-                Key Features
-            </summary>
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
             <ul class="list-disc pl-5 mt-2 text-sm">
-                <li>
-                    Complete E-Commerce Functionality: Products, categories,
-                    orders, payments, user profiles
-                </li>
-                <li>
-                    High Performance: Optimized database queries, caching
-                    strategies, and asynchronous processing
-                </li>
-                <li>
-                    Authentication & Authorization: JWT-based secure
-                    authentication with role-based permissions
-                </li>
-                <li>
-                    Background Processing: Celery for handling
-                    resource-intensive tasks asynchronously
-                </li>
-                <li>
-                    Database Optimization: PostgreSQL with optimized queries and
-                    indexing strategies
-                </li>
+                <li>Robust and secure monitoring system</li>
+                <li>Control of oilfield operations</li>
+                <li>Integration of IoT with blockchain technology</li>
             </ul>
         </details>
         <div class="flex gap-4">
-            <a href="https://github.com/OmarMuhammmed/Ecommerce-API" target="_blank"
-                class="text-white hover:text-indigo-400 transition-all duration-300 flex items-center"><i
-                    class="fab fa-github mr-2"></i>View Code</a>
+            <a href="https://github.com/Ahmed-Allawy/IOT_Projects/tree/main/Smart%20OilField%20%5B%20IoT%26Blockchain%20%5D"
+                target="_blank" class="text-white hover:text-indigo-400 transition-all duration-300">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
         </div>
+
+
     </div>
-    <div
+
+    <div data-category="IoT"
         class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
-        <h3 class="text-xl font-semibold mb-4">Recipe API</h3>
+        <h3 class="text-xl font-semibold mb-4">NTI Graduation Project</h3>
+
         <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Django</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">DRF</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Docker</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Nginx</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">TDD</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">IoT</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">ML</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">ECG</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Truck Monitoring</span>
         </div>
-        <p class="text-base opacity-90 mb-4 flex-grow">
-            A robust Django REST API for managing recipes, ingredients, and
-            user authentication. Built with Django REST Framework following
-            Test-Driven Development (TDD) architecture and designed for
-            scalability with Docker containerization. Production-ready with
-            Nginx reverse proxy and uWSGI.
+        <p class="text-base opacity-90 mb-4">
+            Graduation project from (NTI IoT & AI training). Monitors truck drivers’ states such as temperature, weight,
+            and heart rate (ECG) with ML classification.
         </p>
+
         <details class="mb-4">
-            <summary class="text-emerald-400 font-medium cursor-pointer">
-                Key Features
-            </summary>
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
             <ul class="list-disc pl-5 mt-2 text-sm">
-                <li>
-                    User Authentication: Token-based authentication system
-                </li>
-                <li>Recipe Management: Full CRUD operations for recipes</li>
-                <li>
-                    Ingredient Management: Manage recipe ingredients with
-                    quantities
-                </li>
-                <li>Tag System: Organize recipes with custom tags</li>
-                <li>Image Upload: Support for recipe images with Pillow</li>
-                <li>
-                    RESTful API: Clean API design with automatic documentation
-                </li>
-                <li>
-                    Docker Support: Containerized deployment with Docker Compose
-                </li>
-                <li>Production Ready: Nginx reverse proxy with uWSGI</li>
-                <li>
-                    TDD Architecture: Built following Test-Driven Development
-                    principles
-                </li>
-                <li>
-                    API Documentation: Auto-generated docs with drf-spectacular
-                </li>
+                <li>Monitor truck driver’s state</li>
+                <li>Temperature and weight tracking</li>
+                <li>Heart rate monitoring using ECG</li>
+                <li>ML-based classification of driver’s condition</li>
             </ul>
         </details>
         <div class="flex gap-4">
-            <a href="https://github.com/OmarMuhammmed/Recipe-API" target="_blank"
-                class="text-white hover:text-indigo-400 transition-all duration-300 flex items-center"><i
-                    class="fab fa-github mr-2"></i>View Code</a>
+            <a href="https://github.com/Ahmed-Allawy/IOT_Projects/tree/main/nti%20graduation%20project" target="_blank"
+                class="text-white hover:text-indigo-400 transition-all duration-300">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
         </div>
+
+
     </div>
-    <div
+
+    <div data-category="IoT backend"
         class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
-        <h3 class="text-xl font-semibold mb-4">Product Search API</h3>
+        <h3 class="text-xl font-semibold mb-4">UDP Telemetry Server Client</h3>
+
         <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Django</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">DRF</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Full-Text Search</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Caching</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Multi-Language</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">IoT</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">UDP</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">JSON</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Node.js</span>
         </div>
-        <p class="text-base opacity-90 mb-4 flex-grow">
-            A powerful and efficient product search API built with Django
-            and PostgreSQL. Provides advanced search capabilities including
-            full-text search, fuzzy matching for misspellings, partial
-            keyword matching, and multi-language support (English/Arabic)
-            with comprehensive nutrition facts tracking.
+        <p class="text-base opacity-90 mb-4">
+            Simple UDP-based IoT system for sending JSON telemetry data from C++ for sensor simulation and Node.js for
+            real-time data collection.
         </p>
+
         <details class="mb-4">
-            <summary class="text-emerald-400 font-medium cursor-pointer">
-                Key Features
-            </summary>
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
             <ul class="list-disc pl-5 mt-2 text-sm">
-                <li>
-                    Advanced Search: Full-text search with PostgreSQL GIN
-                    indexing
-                </li>
-                <li>
-                    Fuzzy Matching: Handle misspellings using trigram similarity
-                </li>
-                <li>
-                    Multi-Language Support: English and Arabic content handling
-                </li>
-                <li>Partial Keywords: Support for incomplete search terms</li>
-                <li>
-                    Performance Optimization: Query caching and efficient
-                    database operations
-                </li>
-                <li>Smart Ranking: Relevance-based result ordering</li>
-                <li>
-                    Comprehensive Filtering: Category, brand, price range
-                    filtering
-                </li>
-                <li>
-                    Nutrition Facts: Detailed nutritional information tracking
-                </li>
-                <li>Rate Limiting: Security with request throttling</li>
-                <li>Clean Architecture: Modular design with service layer</li>
+                <li>Send JSON telemetry data</li>
+                <li>Sensor simulation with C++</li>
+                <li>Real-time data collection with Node.js</li>
             </ul>
         </details>
+
         <div class="flex gap-4">
-            <a href="https://github.com/OmarMuhammmed/product-search-api" target="_blank"
-                class="text-white hover:text-indigo-400 transition-all duration-300 flex items-center"><i
-                    class="fab fa-github mr-2"></i>View Code</a>
+            <a href="https://github.com/ahmad-allawy/udp-telemetry-server-client" target="_blank"
+                class="text-white hover:text-indigo-400 transition-all duration-300">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
         </div>
+
+
     </div>
-    <div
+
+    <div data-category="IoT"
         class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
-        <h3 class="text-xl font-semibold mb-4">
-            Student Payment Management System
-        </h3>
+        <h3 class="text-xl font-semibold mb-4">Location Tracking with Azure IoT</h3>
+
         <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Django</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">SQLite</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Docker</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Arabic RTL</span>
-            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">CSV Export</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Azure</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">IoT Hub</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Azure Functions</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Geofence</span>
         </div>
-        <p class="text-base opacity-90 mb-4 flex-grow">
-            A comprehensive Django-based web application for managing
-            student payments and academic records. Designed for educational
-            institutions to track student enrollment, monthly fees, and
-            payment status across different grade levels with Arabic
-            interface support.
+        <p class="text-base opacity-90 mb-4">
+            Azure services including IoT hub, serverless, Functions (IoT Hub event trigger), Azurite, Azure Storage
+            (blobs), Azure Maps API, and geofence.
         </p>
+
         <details class="mb-4">
-            <summary class="text-emerald-400 font-medium cursor-pointer">
-                Key Features
-            </summary>
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
             <ul class="list-disc pl-5 mt-2 text-sm">
-                <li>
-                    Student Management: Add, update, and delete student records
-                    with grade-based organization
-                </li>
-                <li>
-                    Payment Tracking: Monthly payment management for academic
-                    year (August to June)
-                </li>
-                <li>
-                    Dashboard Analytics: Real-time statistics and revenue
-                    tracking with visual indicators
-                </li>
-                <li>
-                    Multi-language Support: Arabic interface with RTL support
-                    for educational institutions
-                </li>
-                <li>
-                    Export Capabilities: CSV export for student data and payment
-                    reports with Arabic encoding
-                </li>
-                <li>
-                    Revenue Analytics: Monthly and grade-wise revenue reporting
-                    with advanced filtering
-                </li>
-                <li>
-                    Responsive Design: Mobile-friendly interface with search and
-                    filter capabilities
-                </li>
-                <li>
-                    Production Ready: Docker containerization with Gunicorn web
-                    server
-                </li>
-                <li>
-                    Grade Support: Comprehensive support for grades 7-12 (الصف
-                    الأول الإعدادي to الصف الثالث الثانوي)
-                </li>
-                <li>
-                    Payment Status: Visual tracking for paid/unpaid/partial
-                    payments with exemption handling
-                </li>
+                <li>Azure IoT Hub event trigger</li>
+                <li>Serverless Azure Functions</li>
+                <li>Geofence and location tracking</li>
+                <li>Azure Storage (blobs)</li>
             </ul>
         </details>
         <div class="flex gap-4">
-            <a href="#" target="_blank"
-                class="text-white hover:text-indigo-400 transition-all duration-300 flex items-center"><i
-                    class="fab fa-github mr-2"></i>View Code</a>
+            <a href="https://github.com/Ahmed-Allawy/IOT_Projects/tree/main/location%20tracking%20with%20azure"
+                target="_blank" class="text-white hover:text-indigo-400 transition-all duration-300">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
+
+
+    </div>
+
+    <div data-category="IoT"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
+        <h3 class="text-xl font-semibold mb-4">Plants Watering Control with Azure IoT</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Azure</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">IoT Hub</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Azure Functions</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Soil Moisture</span>
+        </div>
+
+        <p class="text-base opacity-90 mb-4">
+            Checks soil moisture and opens pump if value is below threshold using Azure IoT Hub, serverless, Functions,
+            and Storage.
+        </p>
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>Soil moisture monitoring</li>
+                <li>Automatic pump control</li>
+                <li>Azure IoT Hub integration</li>
+                <li>Serverless Azure Functions</li>
+            </ul>
+        </details>
+
+
+        <div class="flex gap-4">
+            <a href="https://github.com/Ahmed-Allawy/IOT_Projects/tree/main/plants%20watering%20control%20with%20Azure"
+                target="_blank" class="text-white hover:text-indigo-400 transition-all duration-300">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
         </div>
     </div>
+
+    <div data-category="IoT"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
+        <h3 class="text-xl font-semibold mb-4">Predict Plant Growth</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">IoT</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Growth Degree Days</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Temperature</span>
+        </div>
+
+        <p class="text-base opacity-90 mb-4">
+            Predicts plant growth using growth degree days method measured by temperature.
+        </p>
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>Growth prediction based on degree days</li>
+                <li>Temperature-based measurements</li>
+            </ul>
+        </details>
+        <div class="flex gap-4">
+            <a href="https://github.com/Ahmed-Allawy/IOT_Projects/tree/main/Predict%20plant%20growth" target="_blank"
+                class="text-white hover:text-indigo-400 transition-all duration-300">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
+
+
+    </div>
+
+    <div data-category="IoT"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
+        <h3 class="text-xl font-semibold mb-4">DaVinci-Plotter</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Robot</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Manipulator</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">College Project</span>
+        </div>
+        <p class="text-base opacity-90 mb-4">
+            DOF manipulator Robot, contributed on it with my college students.
+        </p>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>DOF manipulator robot</li>
+
+            </ul>
+        </details>
+
+
+        <div class="flex gap-4">
+            <a href="https://github.com/Ahmed-Allawy/DaVinci-Plotter" target="_blank"
+                class="text-white hover:text-indigo-400 transition-all duration-300">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
+    </div>
+
+    <div data-category="IoT"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
+        <h3 class="text-xl font-semibold mb-4">Irrigation System</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Microcontroller</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">C Code</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Pic16f877a</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Team Project</span>
+        </div>
+        <p class="text-base opacity-90 mb-4">
+            With my team in college we made this project. My part was written in C code for our microcontroller
+            (pic16f877a), you can see it on my GitHub.
+        </p>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>Microcontroller programming in C</li>
+                <li>Irrigation system design</li>
+
+            </ul>
+        </details>
+        <div class="flex gap-4">
+            <a href="https://github.com/Ahmed-Allawy/Proteus/tree/main/Interrupt-handling-With-PIC-microController"
+                target="_blank" class="text-white hover:text-indigo-400 transition-all duration-300">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
+
+
+    </div>
+    <!-- end of IoT & embedded projects -->
+
+    <!-- mobile dev projects -->
+    <div data-category="Mobile Dev"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
+        <h3 class="text-xl font-semibold mb-4">Smart Home App</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Flutter</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Dart</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">MQTT</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">HiveMQ</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">ESP8266</span>
+        </div>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>Control and monitor smart home devices remotely</li>
+                <li>MQTT Publish/Subscribe dashboard</li>
+                <li>Real-time device state updates</li>
+                <li>Broker connectivity interface</li>
+            </ul>
+        </details>
+
+        <div class="flex gap-4">
+            <a href="https://github.com/Ahmed-Allawy/Flutter_Projects/tree/main/smart_home_app" target="_blank"
+                class="text-white hover:text-indigo-400 transition-all duration-300"> <i
+                    class="fab fa-github mr-2"></i>Source code</a>
+        </div>
+    </div>
+
+
+    <div data-category="Mobile Dev"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
+        <h3 class="text-xl font-semibold mb-4">AWY MQTT Client App</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Flutter</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Dart</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">MQTT</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Broker Agnostic</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Dashboard UI</span>
+        </div>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>Connect to any MQTT broker</li>
+                <li>Publish and subscribe to topics</li>
+                <li>Interactive learning dashboard</li>
+                <li>Real-time message monitoring</li>
+            </ul>
+        </details>
+
+        <div class="flex gap-4">
+            <a href="https://github.com/Ahmed-Allawy/Flutter_Projects/tree/main/awy_mqtt_client" target="_blank"
+                class="text-white hover:text-indigo-400 transition-all duration-300"> <i
+                    class="fab fa-github mr-2"></i>Source code</a>
+        </div>
+    </div>
+
+
+    <!-- Tomato App -->
+    <div data-category="Mobile Dev"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
+        <h3 class="text-xl font-semibold mb-4">Tomato App</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Flutter</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Flask</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Custom Vision</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Image Classification</span>
+        </div>
+
+        <p class="text-base opacity-90 mb-4">
+            AI-powered mobile app to classify tomatoes as Ripe or Reject using ML models.
+        </p>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>Tomato image classification (Ripe/Reject)</li>
+                <li>REST API communication with Flask backend</li>
+                <li>Real-time result display on mobile</li>
+                <li>Clean and simple classification UI</li>
+            </ul>
+        </details>
+
+        <div class="flex gap-4">
+            <a href="https://github.com/Ahmed-Allawy/Flutter_Projects/tree/main/tomato_classification" target="_blank"
+                class="text-white hover:text-indigo-400 transition-all duration-300">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
+    </div>
+    <!-- FlyGate App -->
+    <div data-category="Mobile Dev"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
+        <h3 class="text-xl font-semibold mb-4">FlyGate App</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Flutter</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">AI Face Verification</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">PayPal API</span>
+        </div>
+
+        <p class="text-base opacity-90 mb-4">
+            Airline ticket booking app with AI-based user photo verification and online payments.
+        </p>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>Capture and verify user face using AI</li>
+                <li>Flight ticket booking interface</li>
+                <li>Payment integration using PayPal</li>
+                <li>Secure user identity validation</li>
+            </ul>
+        </details>
+
+        <div class="flex gap-4">
+            <a href="https://github.com/Ahmed-Allawy/Graduation_Project" target="_blank"
+                class="text-white hover:text-indigo-400 transition-all duration-300">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Blood Bank App -->
+    <div data-category="Mobile Dev"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-card">
+        <h3 class="text-xl font-semibold mb-4">Blood Bank App</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Flutter</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">HTTP APIs</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">OOP</span>
+        </div>
+
+        <p class="text-base opacity-90 mb-4">
+            App for managing blood donations and urgent blood requests for patients.
+        </p>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>Blood donation requests</li>
+                <li>Patient blood search and request system</li>
+                <li>User-friendly mobile interface</li>
+                <li>Role-based user flows (donor/patient)</li>
+            </ul>
+        </details>
+
+        <div class="flex gap-4">
+            <a href="https://github.com/Ahmed-Allawy/blood_bank" target="_blank"
+                class="text-white hover:text-indigo-400 transition-all duration-300">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
+    </div>
+
+
+
+
 </div>
-
-
-<script>
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const projectCards = document.querySelectorAll(".project-card");
-
-    filterButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const filter = button.getAttribute("data-filter");
-
-            // تغيير المظهر للزر النشط
-            filterButtons.forEach(btn => btn.classList.remove("active"));
-            button.classList.add("active");
-
-            // إظهار / إخفاء المشاريع
-            projectCards.forEach(card => {
-                const category = card.getAttribute("data-category");
-
-                if (filter === "all" || filter === category) {
-                    card.style.display = "block";
-                    card.classList.add("animate-slide-in-up");
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        });
-    });
-</script>
