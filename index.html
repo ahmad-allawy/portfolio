@@ -531,7 +531,7 @@
         
         () => {
           const filterButtons = document.querySelectorAll('.filter-btn');
-          const projectCards = document.querySelectorAll('.project-card');
+          const projectCards = document.querySelectorAll('.project-cards');
 
           filterButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -543,6 +543,8 @@
               const filter = button.getAttribute('data-filter');
 
               projectCards.forEach(card => {
+                console.log(card);
+                
                 if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
                   card.style.display = 'block';
                 } else {
