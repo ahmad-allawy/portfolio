@@ -1,57 +1,59 @@
 <style>
     .filter-btn {
-  padding: 10px 22px;
-  background: rgba(99, 102, 241, 0.15);
-  border: 1.5px solid rgba(99, 102, 241, 0.4);
-  border-radius: 50px;
-  color: #c7d2fe;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+        padding: 10px 22px;
+        background: rgba(99, 102, 241, 0.15);
+        border: 1.5px solid rgba(99, 102, 241, 0.4);
+        border-radius: 50px;
+        color: #c7d2fe;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
 
-.filter-btn:hover {
-  background: oklch(65.613% 0.24084 353.961 / 0.692);
-  color: #ffffff;
-  border-color: oklch(65.613% 0.24084 353.961 / 0.692);
-  box-shadow: 0 0 12px  oklch(65.613% 0.24084 353.961 / 0.692);
-  transform: translateY(-2px);
-}
+    .filter-btn:hover {
+        background: oklch(65.613% 0.24084 353.961 / 0.692);
+        color: #ffffff;
+        border-color: oklch(65.613% 0.24084 353.961 / 0.692);
+        box-shadow: 0 0 12px oklch(65.613% 0.24084 353.961 / 0.692);
+        transform: translateY(-2px);
+    }
 
-.filter-btn.active,
-.filter-btn:active {
-  background: rgba(99, 102, 241, 0.4);
-  color: #ffffff;
-  border-color: rgba(99, 102, 241, 0.9);
-  box-shadow: 0 0 18px rgba(99, 102, 241, 0.8);
-  transform: scale(0.97);
-}
+    .filter-btn.active,
+    .filter-btn:active {
+        background: rgba(99, 102, 241, 0.4);
+        color: #ffffff;
+        border-color: rgba(99, 102, 241, 0.9);
+        box-shadow: 0 0 18px rgba(99, 102, 241, 0.8);
+        transform: scale(0.97);
+    }
 
-.filter-btn.active {
-  color: #ffffff;
-  font-weight: 600;
-  background:  oklch(65.613% 0.24084 353.961 / 0.692);
-  border: 2px solid  oklch(65.613% 0.24084 353.961 / 0.692);
-  box-shadow: 0 0 20px  oklch(65.613% 0.24084 353.961 / 0.692);
-}
-.filter-btn[data-filter="Mobile Dev"]::before {
-  content: "📱";
-}
-.filter-btn[data-filter="gamedev"]::before {
-  content: "🎮";
-}
-.filter-btn[data-filter="backend"]::before {
-  content: "⚙";
-}
-.filter-btn[data-filter="IoT"]::before {
-  content: "🔌";
-}
+    .filter-btn.active {
+        color: #ffffff;
+        font-weight: 600;
+        background: oklch(65.613% 0.24084 353.961 / 0.692);
+        border: 2px solid oklch(65.613% 0.24084 353.961 / 0.692);
+        box-shadow: 0 0 20px oklch(65.613% 0.24084 353.961 / 0.692);
+    }
 
+    .filter-btn[data-filter="Mobile Dev"]::before {
+        content: "📱";
+    }
 
+    .filter-btn[data-filter="gamedev"]::before {
+        content: "🎮";
+    }
+
+    .filter-btn[data-filter="backend"]::before {
+        content: "⚙";
+    }
+
+    .filter-btn[data-filter="IoT"]::before {
+        content: "🔌";
+    }
 </style>
 
 <div class="text-center mb-12 animate-slide-in-up">
@@ -87,15 +89,170 @@
         Mobile Dev
     </button>
 
-    <button
+    <!-- <button
         class="filter-btn px-5 py-2 bg-indigo-500/20 border border-indigo-500/40 rounded-full hover:bg-indigo-500/30"
         data-filter="gamedev">
         Game Dev
-    </button>
+    </button> -->
 </div>
 
 <br>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- backend projects -->
+    <div data-category="backend"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 project-cards">
+        <h3 class="text-xl font-semibold mb-4">Django E-Commerce API</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Backend</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Django</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">DRF</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">REST API</span>
+        </div>
+
+        <p class="text-base opacity-90 mb-4">
+            RESTful E-Commerce backend built with Django and Django REST Framework
+            supporting authentication, products, orders, and payments.
+        </p>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>User authentication & authorization</li>
+                <li>Products & categories management</li>
+                <li>Orders & checkout system</li>
+                <li>JWT authentication</li>
+            </ul>
+        </details>
+
+        <div class="flex gap-4">
+            <a href="https://github.com/ahmad-allawy/Django-Ecommerce-API" target="_blank" class="text-white hover:text-indigo-400">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
+    </div>
+    <div data-category="backend"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 project-cards">
+        <h3 class="text-xl font-semibold mb-4">YassSurvey – Survey System</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Backend</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Django</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+        </div>
+
+        <p class="text-base opacity-90 mb-4">
+            Backend system for managing surveys and collecting responses for students
+            and staff to improve institutional services.
+        </p>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>Create & manage surveys</li>
+                <li>Questions & answers management</li>
+                <li>Survey analytics & reports</li>
+                <li>Role-based access</li>
+            </ul>
+        </details>
+    </div>
+    <div data-category="backend"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 project-cards">
+        <h3 class="text-xl font-semibold mb-4">Book Store API</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Node.js</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Express</span>
+             <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Postgresql</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">JWT</span>
+        </div>
+
+        <p class="text-base opacity-90 mb-4">
+            REST API for managing books with authentication and authorization built using Node.js and Express.
+        </p>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>CRUD operations for books</li>
+                <li>User authentication (JWT)</li>
+                <li>Role-based permissions</li>
+            </ul>
+        </details>
+         <div class="flex gap-4">
+            <a href="https://github.com/Ahmed-Allawy/node_js_projects" target="_blank" class="text-white hover:text-indigo-400">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
+    </div>
+    <div data-category="backend"
+    class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-cards">
+    
+    <h3 class="text-xl font-semibold mb-4">Node.js E-Commerce API</h3>
+
+    <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Backend</span>
+        <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Node.js</span>
+        <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Express</span>
+        <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">MongoDB</span>
+        <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">JWT</span>
+    </div>
+
+    <p class="text-base opacity-90 mb-4">
+        RESTful Node.js API for an E-Commerce system providing core features such as
+        user authentication, product management, cart, and order processing.
+    </p>
+
+    <details class="mb-4">
+        <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+        <ul class="list-disc pl-5 mt-2 text-sm">
+            <li>User authentication & authorization (JWT)</li>
+            <li>Product & category management</li>
+            <li>Shopping cart functionality</li>
+            <li>Order creation and tracking</li>
+            <li>Secure RESTful API architecture</li>
+        </ul>
+    </details>
+
+    <div class="flex gap-4">
+        <a href="https://github.com/ahmad-allawy/nodejs-ecommerce-api" target="_blank"
+            class="text-white hover:text-indigo-400 transition-all duration-300">
+            <i class="fab fa-github mr-2"></i>Source code
+        </a>
+    </div>
+</div>
+
+    <div data-category="backend"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 project-cards">
+        <h3 class="text-xl font-semibold mb-4">Todo App with gRPC</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">gRPC</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Backend</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Protobuf</span>
+        </div>
+
+        <p class="text-base opacity-90 mb-4">
+            Backend Todo application implemented using gRPC for high-performance communication.
+        </p>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>gRPC-based client/server</li>
+                <li>Protocol Buffers</li>
+                <li>High performance communication</li>
+            </ul>
+        </details>
+         <div class="flex gap-4">
+            <a href="https://github.com/ahmad-allawy/GRPC_Python" target="_blank" class="text-white hover:text-indigo-400">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
+    </div>
+        <!-- End of backend projects -->
+
 
     <!-- IoT & embedded projects -->
     <div data-category="IoT"
@@ -557,8 +714,16 @@
             </a>
         </div>
     </div>
+    <!-- end of mobile dev projects -->
+
+
+    <!-- Game development projects  -->
 
 
 
+    <!-- end of Game development projects  -->
 
 </div>
+
+
+<!--  add CVs links -->
