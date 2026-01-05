@@ -191,7 +191,7 @@
       class="fixed w-full max-w-6xl top-0 z-50 bg-gray-900/80 backdrop-blur-lg border-b border-indigo-500/20 transition-all duration-300">
       <div class="flex justify-between items-center py-4">
         <div class="logo font-extrabold text-2xl animate-pop-in">
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-pink-600">AWY</span>
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-pink-600">Ahmed Allawy</span>
         </div>
         <nav class="hidden md:flex items-center space-x-8">
           <ul class="flex space-x-6">
@@ -233,7 +233,7 @@
             <a href="https://linkedin.com/in/ahmed-allawy-4b11911ba" target="_blank" aria-label="LinkedIn"
               class="hover:text-indigo-400 hover:-translate-y-1 transition-all duration-300"><i
                 class="fab fa-linkedin text-xl"></i></a>
-            <a href="https://github.com/a-ilawy" target="_blank" aria-label="GitHub"
+            <a href="https://github.com/Ahmad-Allawy" target="_blank" aria-label="GitHub"
               class="hover:text-indigo-400 hover:-translate-y-1 transition-all duration-300"><i
                 class="fab fa-github text-xl"></i></a>
           </div>
@@ -297,12 +297,13 @@
               </div>
             </div>
             <p class="text-lg opacity-80 mb-8 max-w-2xl mx-auto md:mx-0">
-              Based on my studies in the Computer and Systems Engineering department,
-              I have worked with various fields and technologies such as the Internet of Things,
-              embedded systems, backend, mobile, 3D modeling, and game development. Currently, I am more interested in
-              <span class="text-emerald-400 font-medium">Internet of Things(IoT)</span> and
-              <span class="text-emerald-400 font-medium">Backend development using Django and Django REST
-                Framework</span>.
+              Software Engineer with a background in Computer and Systems Engineering, experienced in IoT, embedded
+              systems, backend development, mobile development (Flutter), 3D modeling, and game development. Currently
+              focused on building scalable
+              <span class="text-emerald-400 font-medium">backend systems using Django and Django REST Framework </span>
+              and developing
+              <span class="text-emerald-400 font-medium">IoT solutions integrating cloud platforms and real-time data
+                processing. </span>
             </p>
             <div
               class="inline-flex items-center bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 rounded-full mb-8 relative group transform hover:scale-105 transition-transform duration-300">
@@ -346,7 +347,7 @@
 
       <!-- projects section -->
       <section id="projects" class="py-20">
-        
+
       </section>
       <!-- end of projects section -->
 
@@ -408,6 +409,18 @@
                   <span
                     class="absolute bottom-[-30px] left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 group-hover:bottom-[-20px] transition-all duration-300">Gmail</span>
                 </a>
+                <a href="https://wa.me/201013456254" target="_blank" class="relative group">
+                  <div class="w-14 h-14 bg-gray-800 border border-indigo-500/30 rounded-full flex items-center justify-center text-2xl
+           hover:bg-green-500 hover:text-white hover:-translate-y-2
+           hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300">
+                    <i class="fab fa-whatsapp"></i>
+                  </div>
+                  <span class="absolute bottom-[-30px] left-1/2 -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-sm
+           opacity-0 group-hover:opacity-100 group-hover:bottom-[-20px] transition-all duration-300">
+                    WhatsApp
+                  </span>
+                </a>
+
               </div>
             </div>
             <h4 class="text-lg font-semibold text-indigo-400">
@@ -528,7 +541,7 @@
       .then(response => response.text())
       .then(data => document.getElementById('projects').innerHTML = data).then(
         // Re-initialize filtering functionality after loading projects
-        
+
         () => {
           const filterButtons = document.querySelectorAll('.filter-btn');
           const projectCards = document.querySelectorAll('.project-cards');
@@ -544,7 +557,7 @@
 
               projectCards.forEach(card => {
                 console.log(card);
-                
+
                 if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
                   card.style.display = 'block';
                 } else {
