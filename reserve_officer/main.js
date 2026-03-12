@@ -14,13 +14,10 @@ function secondsToDhms(seconds) {
 //Define graduation date 
 let military_date  = new Date("1 April 2026 12:00:00");
 
-// مكان عرض الوقت
 var display_military_date = document.getElementById("military_date");
 
-// مكان عرض القول
 var display_aphorism = document.getElementById("aphorism");
 
-// الأقوال
 const aphorisms = [
 
 "الطبلة يا رااعي",
@@ -33,7 +30,6 @@ const aphorisms = [
 "استرح وشرب ماية استرح"
 ];
 
-// تحديث العداد
 function displayDate(){
 
 let datenow = new Date();
@@ -48,7 +44,6 @@ display_military_date.innerHTML = result;
 
 }
 
-// الأقوال العشوائية
 function displayAphorism(){
 
 const randomIndex = Math.floor(Math.random()*aphorisms.length);
